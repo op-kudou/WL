@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./yq-animation.css">
+    <style>
+        body{
+            text-align: center;
+        }
+        h2 {
+            display: inline-block;
+            color: #f35626;
+            background-color: lightgreen;
+            padding: 5px 20px;
+            width: 300px;
+            height: 30px;
+            /* background-image: linear-gradient(92deg, #f35626 0%, #feab3a 100%); */
+            /* -webkit-background-clip: text; */
+            /* background-clip: text; */
+            /* -webkit-text-fill-color: transparent; */
+            /* animation: hue 60s infinite linear; */
+        }
+       /* 
+       动画分析过程：
+       1：分析动画运动轨迹；运动显现
+       2：想一下哪些CSS 属性可以实现这样的效果。
+       3：规矩轨迹变化；进行百分比划分（不一定是等分），
+          划分方式：找到几个特殊的【峰值】，在峰值与峰值之间进行划分
+       4：在每个不同的百分比区间更改属性的值
+       5： 如果是渐进式的；值越来越小小；知道小到回到最初状态
+       
+       动画运动轨迹：
+       常用的： 平移  旋转  拉伸；显示隐藏  透明度
+       
+       */
+       .bac{
+           display: inline-block;
+           width: 336px;
+           height: 76px;
+           padding: 2px 20px;
+           background-color: black;
+       }
+    </style>
+</head>
+
+<body>
+    <h1>展示自己的动画样式</h1>
+    <h2 class="animation bounce">Bounce弹跳动画</h2>
+    <br>
+    <h2 class="animation flash delay-2s slower">flash闪烁动画</h2>
+    <br>
+    <h2 class="animation flasher">flasher快闪</h2>
+    <br>
+    <h2 class="animation pulesFont">字体放大</h2>
+    <br>
+    <h2 class="animation pules">pules缩放样式</h2>
+    <br>
+    <h2 style="background-color: aqua;" class="animation rubberBand">rubberBand</h2>
+    <br>
+    <h2 class="animation shake">shake抖动样式</h2>
+    <br>
+    <h2 class="animation swing">swing摇摆</h2>
+    <br>
+    <h2 class="animation graduallyPut">graduallyPut 摇摆缩放</h2>
+    <br>
+    <h2 class="animation turntable">turntable转动</h2>
+    <br> 
+    <h2 class="animation jello slowest">jello拉伸</h2>
+    <br>
+    <h2 class="animation lightenOutCenter">ligthenOut中间</h2>
+    <br>
+    <h2 class="animation lightenOutLeft">ligthenOut左侧</h2>
+    <br>
+    <h2 class="animation lightenOutRight">ligthenOut右侧</h2>
+    <br>
+    <div class="bac">
+        <h2 class="animation inauguration delay-2s">inauguration开幕式</h2>
+    </div>
+    <br>
+    <h2 class="animation inaugurationTop">inaugurationTop开幕式</h2>
+    <br>
+    <h2 class="animation inaugurationBottom">inaugurationBottom开幕</h2>
+    <br>
+    <h2 class="animation heartBeat fast">heartBeat心跳</h2>
+    <br>
+    <h2 class="animation bounceLeft">bounceLeft边出来</h2>
+    <br>
+    <h2 class="animation bounceTop">bounceTop边出来</h2>
+    <br>
+    <h2 class="animation bounceRight">bounceRight边出来</h2>
+    <br>
+    <h2 class="animation bounceBottom">bouncBottom边出来</h2>
+    <br>
+    <h2 class="animation bounceIN">bounceIn里面弹</h2>
+
+    <div class="box"></div>
+
+    <br>
+    <h2 class="animation bounceOut">bounceOut外弹</h2>
+    <br>
+    <h2 class="animation bounceOutDown fast">bounceOutDown下弹</h2>
+    <br>
+    <h2 class="animation bounceOutUp">bounceOutUp上弹</h2>
+    <br>
+    <h2 class="animation bounceOutLeft faster">bounceOutLeft左弹</h2>
+    <br>
+    <h2 class="animation bounceOutRight faster">bounceOutRight右弹</h2>
+    <br>
+    
+    <h2 class="animation fadeIn fastest">fadeIn</h2>
+    <br>
+
+</body>
+
+</html>
