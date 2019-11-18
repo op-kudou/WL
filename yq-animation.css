@@ -1,0 +1,734 @@
+        /* 
+写属于自己的动画样式库（参考 animate.css动画库）
+*/
+        /*
+ 通常基础类作用：为默认情况。
+ 其他情况可以【按需】修改默认情况（重新赋值过程）
+*/
+
+/* 
+    单位使用说明：
+    1.凡是使用百分比的，都是以父元素为基础；
+    2.凡是单位大于1000px的，都是以body为基础
+*/
+        /* 定义基础类 */
+        
+        .animation {
+            /* 默认执行所有动画名字 */
+            animation: all;
+            /* 默认每个动画执行时间 */
+            animation-duration: 2s;
+            /* 默认所有动均匀速执行 */
+            animation-timing-function: linear;
+        }
+        /* 始终是否循环执行 */
+        
+        .infinite {
+            animation-iteration-count: infinite;
+        }
+        /* 设置延迟执行时间 */
+        
+        .delay-1s {
+            animation-delay: 1s;
+        }
+        
+        .delay-2s {
+            animation-delay: 2s;
+        }
+        
+        .delay-3s {
+            animation-delay: 3s;
+        }
+        
+        .delay-4s {
+            animation-delay: 4s;
+        }
+        
+        .delay-5s {
+            animation-delay: 5s;
+        }
+        /* 设置动画执行时间长短 */
+        
+        .fast {
+            animation-duration: 1S;
+        }
+        
+        .faster {
+            animation-duration: 800ms;
+        }
+        .fastest {
+            animation-duration: 500ms;
+        }
+        
+        .slow {
+            animation-duration: 3s;
+        }
+        
+        .slower {
+            animation-duration: 4s;
+        }
+        
+        .slowest{
+            animation-duration: 6s;
+        }
+
+        /* 设置不同动画执行的速度 */
+        /* 定义每一个动画样式 */
+        /* 弹跳 */
+        
+        @keyframes bounce {
+            from,
+            20%,
+            53%,
+            80%,
+            to {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            40%,
+            43% {
+                -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                -webkit-transform: translate3d(0, -30px, 0);
+                transform: translate3d(0, -30px, 0);
+            }
+            70% {
+                -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                -webkit-transform: translate3d(0, -15px, 0);
+                transform: translate3d(0, -15px, 0);
+            }
+            90% {
+                -webkit-transform: translate3d(0, -4px, 0);
+                transform: translate3d(0, -4px, 0);
+            }
+        }
+        
+        .bounce {
+            animation-name: bounce;
+            transform-origin: center bottom;
+        }
+        /* 从内部弹 */
+        @keyframes bounceIn{
+            from,
+            20%,
+            40%,
+            60%,
+            80%,
+            to {
+              -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+              animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            0%{
+                transform: scale(0.3,0.3);
+            }
+
+            20%{
+                transform: scale(1.3,1.3);
+            }
+            40%{
+                transform: scale(0.6,0.6);
+            }
+            60%{
+                transform: scale(1.15,1.15);
+            }
+            80%{
+                transform: scale(0.9,0.9);
+            }
+
+        }
+        .bounceIn{
+            animation-name: bounceIn;
+        }
+        /* 从左侧弹 */
+        @keyframes bounceLeft{
+            from,
+            60%,
+            75%,
+            90%,
+            to {
+              -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+              animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            0%{
+                transform: translate(-3000px,0);
+            }
+            60%{
+                transform: translate(25px,0);
+            }
+            70%{
+                transform: translate(-15px,0);
+            }
+            90%{
+                transform: translate(5px,0);
+            }
+            
+        }
+        .bounceLeft{
+            animation-name: bounceLeft;
+        }
+        /* 从右侧弹 */
+        @keyframes bounceRight{
+            from,
+            60%,
+            75%,
+            90%,
+            to {
+              -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+              animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            0%{
+                transform: translate(3000px,0);
+            }
+            60%{
+                transform: translate(-25px,0);
+            }
+            70%{
+                transform: translate(15px,0);
+            }
+            90%{
+                transform: translate(-5px,0);
+            }
+        }
+        .bounceRight{
+            animation-name: bounceRight;
+        }
+
+        /* 从上面弹 */
+        @keyframes bounceTop{
+            from,
+            60%,
+            75%,
+            90%,
+            to {
+              -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+              animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            0%{
+                transform: translate(0px,-100px);
+            }
+            60%{
+                transform: translate(0,20px);
+            }
+            70%{
+                transform: translate(0,-15px);
+            }
+            90%{
+                transform: translate(0px,5px);
+            }
+
+        }
+        .bounceTop{
+            animation-name: bounceTop;
+        }
+
+        /* 从下面弹 */
+        @keyframes bounceBottom{
+            from,
+            60%,
+            75%,
+            90%,
+            to {
+              -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+              animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            0%{
+                transform: translate(0px,100px);
+            }
+            60%{
+                transform: translate(0,-20px);
+            }
+            70%{
+                transform: translate(0,15px);
+            }
+            90%{
+                transform: translate(0px,-5px);
+            }
+        }
+        .bounceBottom{
+            animation-name: bounceBottom;
+        }
+        /* 外部弹出 */
+        @keyframes bounceOut{
+            0%{
+                transform:scale(1,1);
+            }
+            20%{
+                transform:scale(0.9,0.9);
+            }
+            30%{
+                transform:scale(1.3,1.3);
+                opacity: 1;
+            }
+            75%{
+                transform:scale(0.1,0.1);
+                opacity:0;
+            }
+
+        }
+        .bounceOut{
+            animation-name:bounceOut;
+        }
+        /* 下部弹出 */
+        @keyframes bounceOutDown{
+            0%{
+                transform:translate3d(0,10px,0);
+            }
+            20%{
+                transform:translate3d(0,-25px,0);
+            }
+            50%{
+                transform:translate3d(0,225px,0);
+                opacity:0;
+            }
+            70%{
+                transform:translate3d(0,2500px,0);
+                opacity:0;
+            }
+            100%{
+                transform:translate3d(0,-10px,0);
+                opcaity:1;
+            }
+        }
+        .bounceOutDown{
+            animation-name:bounceOutDown;
+        }
+        @keyframes bounceOutUp{
+            0%{
+                transform:translate3d(0,-10px,0);
+            }
+            20%{
+                transform:translate3d(0,25px,0);
+            }
+            50%{
+                transform:translate3d(0,-225px,0);
+                opacity:0;
+            }
+            70%{
+                transform:translate3d(0,-2500px,0);
+                opacity:0;
+            }
+            100%{
+                transform:translate3d(0,10px,0);
+                opcaity:1;
+            }
+        }
+        .bounceOutUp{
+            animation-name:bounceOutUp;
+        }
+        @keyframes bounceOutLeft{
+            0%{
+                transform:translateX(10px);
+            }
+            20%{
+                transform:translateX(20px);
+            }
+            50%{
+                transform:translateX(-2000px);
+            }
+            100%{
+                transform:translateX(0);
+            }
+        }
+        .bounceOutLeft{
+            animation-name:bounceOutLeft;
+        }
+        @keyframes bounceOutRight{
+            0%{
+                transform:translateX(-10px);
+            }
+            20%{
+                transform:translateX(-20px);
+            }
+            50%{
+                transform:translateX(2000px);
+            }
+            100%{
+                transform:translateX(0);
+            } 
+        }
+        .bounceOutRight{
+            animation-name:bounceOutRight;
+        }
+        /*  */
+
+        /* 闪烁 */
+        
+        @keyframes flash {
+            /*0% 50% 10%时候 执行下面样式 */
+            from,
+            50%,
+            to {
+                opacity: 1;
+            }
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+        
+        .flash {
+            animation-name: flash;
+        }
+        /* 3频率快闪 */
+        
+        @keyframes flasher {
+            0%,
+            33%,
+            66%,
+            100% {
+                opacity: 1;
+            }
+            16%,
+            48%,
+            82% {
+                opacity: 0;
+            }
+        }
+        
+        .flasher {
+            animation-name: flasher;
+        }
+        /* 缩放动画 */
+        
+        @keyframes pules {
+            0%,
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
+            50% {
+                transform: scale3d(1.05, 1.05, 1.05);
+            }
+        }
+        
+        .pules {
+            animation-name: pules;
+        }
+        /* 字体放大动画 */
+        
+        @keyframes pulesFont {
+            50% {
+                font-size: 28px;
+                /* 设置子符与字符之间的间距 */
+                letter-spacing: 10px;
+            }
+        }
+        
+        .pulesFont {
+            animation-name: pulesFont;
+        }
+        
+        @-webkit-keyframes rubberBand {
+            from {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+            30% {
+                -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+            }
+            40% {
+                -webkit-transform: scale3d(0.75, 1.25, 1);
+                transform: scale3d(0.75, 1.25, 1);
+            }
+            50% {
+                -webkit-transform: scale3d(1.15, 0.85, 1);
+                transform: scale3d(1.15, 0.85, 1);
+            }
+            65% {
+                -webkit-transform: scale3d(0.95, 1.05, 1);
+                transform: scale3d(0.95, 1.05, 1);
+            }
+            75% {
+                -webkit-transform: scale3d(1.05, 0.95, 1);
+                transform: scale3d(1.05, 0.95, 1);
+            }
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+        
+        @keyframes rubberBand {
+            from {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+            30% {
+                -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+            }
+            40% {
+                -webkit-transform: scale3d(0.75, 1.25, 1);
+                transform: scale3d(0.75, 1.25, 1);
+            }
+            50% {
+                -webkit-transform: scale3d(1.15, 0.85, 1);
+                transform: scale3d(1.15, 0.85, 1);
+            }
+            65% {
+                -webkit-transform: scale3d(0.95, 1.05, 1);
+                transform: scale3d(0.95, 1.05, 1);
+            }
+            75% {
+                -webkit-transform: scale3d(1.05, 0.95, 1);
+                transform: scale3d(1.05, 0.95, 1);
+            }
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+        
+        .rubberBand {
+            animation-name: rubberBand;
+        }
+        /* 抖动 */
+        
+        @keyframes shake {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translate(-10px, 0px);
+            }
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translate(10px, 0px);
+            }
+        }
+        
+        .shake {
+            animation-name: shake;
+        }
+        /* 摇摆 */
+        
+        @keyframes swing {
+            20% {
+                /* 绕Z轴 旋转 15deg */
+                transform: rotate3d(0, 0, 1, 15deg);
+            }
+            40% {
+                /* 绕Z轴 旋转 15deg */
+                transform: rotate3d(0, 0, 1, -10deg);
+            }
+            60% {
+                /* 绕Z轴 旋转 15deg */
+                transform: rotate3d(0, 0, 1, 5deg);
+            }
+            80% {
+                /* 绕Z轴 旋转 15deg */
+                transform: rotate3d(0, 0, 1, -5deg);
+            }
+            100% {
+                /* 绕Z轴 旋转 15deg */
+                transform: rotate3d(0, 0, 1, 0deg);
+            }
+        }
+        
+        .swing {
+            animation-name: swing;
+        }
+
+        /* 渐放 */
+        @keyframes  graduallyPut{
+            from {
+              -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+            }
+          
+            10%,
+            20% {
+              -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+              transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+            }
+          
+            30%,
+            50%,
+            70%,
+            90% {
+              -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+              transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+            }
+          
+            40%,
+            60%,
+            80% {
+              -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+              transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+            }
+          
+            to {
+              -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+            }
+          }
+          
+          .graduallyPut {
+            -webkit-animation-name: graduallyPut;
+            animation-name: graduallyPut;
+          }
+          /* 摇晃、转盘 */
+          @keyframes turntable{
+              /* 通过让元素在x轴左右平移；z旋转完成动画 */
+            from {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+              }
+            
+              15% {
+                -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+                transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+              }
+            
+              30% {
+                -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+                transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+              }
+            
+              45% {
+                -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+                transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+              }
+            
+              60% {
+                -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+                transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+              }
+            
+              75% {
+                -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+                transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+              }
+            
+              to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+              }
+          }
+          .turntable{
+              animation-name: turntable;
+     
+            }
+
+            /* 拉伸 */
+            @keyframes jello {
+                from,
+                11.1%,
+                to {
+                  transform: translate3d(0, 0, 0);
+                }
+              
+                22% {
+                  transform: skewX(-12.5deg) skewY(-12.5deg);
+                }
+              
+                33% {
+                  transform: skewX(6.25deg) skewY(6.25deg);
+                }
+              
+                44% {
+                  transform: skewX(-3.125deg) skewY(-3.125deg);
+                }
+              
+                55% {
+                  transform: skewX(1.5625deg) skewY(1.5625deg);
+                }
+              
+                66% {
+                  transform: skewX(-0.78125deg) skewY(-0.78125deg);
+                }
+              
+                77% {
+                  transform: skewX(0.390625deg) skewY(0.390625deg);
+                }
+              
+                88% {
+                  transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+                }
+              }
+              .jello{
+                  animation-name: jello;
+                  transform-origin: center;
+              }
+
+              /* 左侧闪现 */
+              @keyframes lightenOut{
+                  0%,50%,100%{
+                      transform: rotate3d(0,0,0,);
+                  }
+                  25%,79%{
+                      transform: rotateY(90deg);
+                  }
+              }
+              .lightenOutCenter{
+                  animation-name: lightenOut;
+                  transform-origin:  center;
+              }
+              .lightenOutLeft{
+                animation-name: lightenOut;
+                transform-origin:  left;
+              }
+
+              .lightenOutRight{
+                animation-name: lightenOut;
+                transform-origin:  right;
+              }
+
+              /* 开幕式动画*/
+              @keyframes inauguration{
+                  from{
+                      transform: rotateX(90deg);
+                  }
+
+                  to{
+                      transform: translate3d(0,0,0)
+                  }
+              }
+              .inauguration{
+                  animation-name: inauguration;
+                  transform-origin: center;
+              }
+              .inaugurationTop{
+                animation-name: inauguration;
+                transform-origin: top;
+              }
+              .inaugurationBottom{
+                animation-name: inauguration;
+                transform-origin: bottom ;
+              }
+
+              /* 心跳 */
+              @keyframes heartBeat{
+                  from,50%,to{
+                      transform: scale(1);
+                  }
+                  25%,60%{
+                      transform: scale(1.3,1.3);
+                  }
+              }
+              .heartBeat{
+                  animation-name: heartBeat;
+              }
+
+              @keyframes fadeIn{
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50%{
+                    opacity: 0;
+                }
+              }
+              .fadeIn{
+                  animation-name:fadeIn;
+              }
