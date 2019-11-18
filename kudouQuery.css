@@ -1,0 +1,1783 @@
+/* 
+    这是一个全局的CSS样式库，欢迎使用kudouQuery
+*/
+
+/* 清空默认 */
+html{
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+body{
+    width: 100%;
+    margin:0px;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height:1.42857143;
+    color:#333;
+    background-color: #fff;
+}
+/* 将所有标签设置为块元素 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+  vertical-align: baseline;
+}
+
+/* 清空音频样式 */
+video,
+progress,
+audio,
+canvas
+{
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+/* 清空所有a标签样式 */
+a{
+    background-color:transparent;
+    color:#337ab7;
+    text-decoration:none;
+}
+a:active
+a:hover{
+    outline:0;
+}
+
+/* 清空列表类标签样式 */
+ul,ol,li,dd,dt,dl{
+    list-style:none;
+}
+*{
+    box-sizing: border-box;
+}
+*::after{
+    box-sizing: border-box;
+}
+*::before{
+    box-sizing:border-box;
+}
+/* 布局 */
+.container{
+    width: 95%;
+    padding:0 15px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.container-fluid{
+    width:100%;
+    padding: 0 15px;
+}
+/* 表单元素样式 */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+/* 清空input默认样式 */
+input{
+    border: none;   /*输入框没有边框*/
+    appearance: none;   
+    -moz-appearance: none;
+    outline: none;  /*获取焦点时的默认样式*/
+    -webkit-appearance: none;
+}
+
+/* 清空选择框样式 */
+select{
+    appearance: none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+/* 清空时间框样式 */
+ /* 控制编辑区域的 */
+ input[type="date"]::-webkit-datetime-edit{
+    /* content: '起始时间'; */
+    color: rgb(188,188,188); 
+    padding-left: 10px;
+  }
+  /* 控制年月日这个区域的 */
+  /* 这是控制年月日之间的斜线或短横线的 */
+  input[type="date"]::-webkit-datetime-edit-text {
+    /* color: blue;  */
+    padding: 0 .3em; 
+    
+  } 
+/*控制下拉小箭头的*/ 
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  color: #fff; 
+} 
+/* 去掉date中上下小三角，但是保留input类型为number的小三角。 */
+input[type=date]::-webkit-inner-spin-button,
+input[type=time]::-webkit-inner-spin-button{ 
+  visibility: hidden; 
+}
+/*----------用来移除叉叉按钮 鼠标移上去还会显示----------*/ 
+input[type="date"]::-webkit-clear-button{
+ display:none;
+}
+
+/* 清空表单样式 */
+input{
+    border: none;
+    appearance:none;
+    -moz-appearance:none;
+    /* input标签聚焦不出现默认边框: */
+    outline:none;
+    /* 用于IOS下移除原生样式 */
+    -webkit-appearance: none;
+}
+
+/* 按钮组件样式 */
+.btn{
+    display:inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline:none; 
+}
+.btn-default{
+    background-color: #333;
+    color: #fff;
+    border:1px solid #ccc;
+}
+.btn-success{
+    background-color: #67c23a;
+    color: #fff;
+}
+.btn-fail{
+    background-color: #f01d98;
+    color: #fff;
+}
+.btn-warning{
+    background-color: rgb(253, 172, 22);
+    color: #fff;
+    border:rgb(253, 172, 22);
+}
+.btn-error{
+    background-color: rgb(252, 8, 8);
+    border-color: rgb(252, 8, 8);
+    color: #fff;
+}
+/* 取消  */
+.btn-cancel{
+    background-color: #fff;
+    border-color:rgb(219, 215, 215) ;
+    color: rgb(66, 65, 65);
+}
+/* 确认  */
+.btn-sure{
+    background-color: rgb(34, 255, 119);
+    border-color: rgb(34, 255, 119);
+    color: #fff;
+}
+
+/* 危险  */
+.btn-danger{
+    background-color: rgb(253, 8, 8);
+    border-color: rgb(253, 8, 8);
+    color: #fff;
+}
+/* 首选  */
+.btn-primary{
+    background-color: #40f9ff;
+    border-color: #40f9ff;
+    color:#fff ;
+}
+/* 一般信息  */
+.btn-info{
+    background-color: #01aaed;
+    border-color: #01aaed;
+    color: #fff;
+}
+/* 禁止按钮  */
+/* .btn-disable{
+    background-color: #909399;
+    border-color: #909399;
+    color: #fff;
+} */
+/* 百搭按钮  */
+.btn-normal{
+    background-color: #ffb800;
+    border-color: #ffb800;
+    color: #fff;
+}
+/* 暖色按钮  */
+.btn-warm{
+    background-color: yellow;
+    border-color: yellow;
+    color: #fff;
+}
+
+/* 渐变按钮 */
+.btn-success-rgb{
+    background-image: linear-gradient(135deg, #67c23a 10%, rgb(0, 255, 234) 100%);
+    color: #fff;
+}
+.btn-warning-rgb{
+    background-image: linear-gradient(135deg, rgb(253, 110, 106) 10%, rgb(255, 198, 0) 100%);
+    color: #fff;
+}
+.btn-error-rgb{
+    background-image: linear-gradient(135deg,rgb(248, 111, 179) 10%, rgb(248, 17, 17) 100%);
+    color: #fff;
+}
+.btn-cancel-rgb{
+    background-image: linear-gradient(135deg,rgb(212, 209, 209) 10%, rgb(69, 68, 70) 100%);
+    color: #fff;
+}
+.btn-sure-rgb{
+    background-image: linear-gradient(135deg,rgb(34, 255, 119) 10%, rgb(103, 242, 247) 100%);
+    color: #fff;
+}
+.btn-default-rgb{
+    background-image: linear-gradient(135deg,#333 10%, rgb(216, 215, 218) 100%);
+    color: #fff;
+}
+.btn-danger-rgb{
+    background-image: linear-gradient(135deg,rgb(253, 8, 8) 10%, rgb(250, 122, 47) 100%);
+    color: #fff;
+}
+.btn-primary-rgb{
+    background-image: linear-gradient(135deg,#409eff 10%, #40f9ff 100%);
+    color: #fff;
+}
+.btn-info-rgb{
+    background-image: linear-gradient(135deg,#01aaed 10%, rgb(39, 4, 194) 100%);
+    color: #fff;
+}
+.btn-normal-rgb{
+    background-image: linear-gradient(135deg,#ffb800 10%, rgb(243, 40, 182) 100%);
+    color: #fff;
+}
+.btn-warm-rgb{
+    background-image: linear-gradient(135deg,rgb(248, 129, 17) 10%, rgb(236, 240, 8) 100%);
+    color: #fff;
+}
+/* 大按钮 */
+.btn-bg{
+    /* height: 50px; */
+    padding: 8px 15px;
+}
+/* 中按钮 */
+.btn-md{
+    /* height:40px; */
+    padding: 4px 10px;
+}
+/* 小按钮 */
+.btn-sm{
+    /* height:30px; */
+    font-size: 12px;
+    padding: 3px 6px;
+}
+.btn-radius{
+    border-radius: 50px;
+}
+.btn-hover:hover{
+    background-color: rgb(31, 248, 41);
+    color:#fff;
+}
+
+/* 表格样式 */
+/* 表格样式 */
+/* 清空表格默认样式 */
+table{
+    background-color: transparent;
+    /* 表格塌陷 */
+    border-collapse: collapse;
+    border: 0px;
+}
+th{
+    font-weight: bold;
+    color: #909399;
+}
+.table{
+    width: 100%;
+    min-width: 100%;
+}
+.table td{
+    border: 1px solid #e0e0e0;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    color: #606263;
+    padding: 10px 0 10px 15px;   
+}
+.table>thead>tr>th{
+    text-align: left;
+    font-weight: 600;
+    color: #606263;
+    padding: 10px 0 10px 15px;
+}
+
+.table-column>tbody>tr>td{
+    border-right: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+}
+.table-column>tbody>tr>td:first-child{
+    border-left: 1px solid transparent;
+}
+.table-column>tbody>tr>td:last-child{
+    border-right: 1px solid transparent;
+}
+
+.table-striped>tbody>tr:nth-of-type(even){
+    background-color: #e2dbdb;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+.table-striped>tbody>tr>td{
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+.table-hover>tbody>tr:hover>td{
+    background-color: #ccc !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.table-condensed>thead>tr>th,
+.table-condensed>tbody>tr>th,
+.table-condensed>tbody>tr>td{
+    text-align: center;
+    padding: 5px;
+}
+.table > thead > tr > td.warning,
+.table > tbody > tr > td.warning, 
+.table > tfoot > tr > td.warning, 
+.table > thead > tr > th.warning, 
+.table > tbody > tr > th.warning, 
+.table > tfoot > tr > th.warning, 
+.table > thead > tr.warning > td, 
+.table > tbody > tr.warning > td,
+.table > tfoot > tr.warning > td, 
+.table > thead > tr.warning > th, 
+.table > tbody > tr.warning > th, 
+.table > tfoot > tr.warning > th{
+    background-color: rgb(253, 172, 22);
+    color: #fafafa;
+    border-bottom:1px solid rgb(253, 172, 22);
+}
+.table > thead > tr > td.info,
+.table > tbody > tr > td.info, 
+.table > tfoot > tr > td.info, 
+.table > thead > tr > th.info, 
+.table > tbody > tr > th.info, 
+.table > tfoot > tr > th.info, 
+.table > thead > tr.info > td, 
+.table > tbody > tr.info > td,
+.table > tfoot > tr.info > td, 
+.table > thead > tr.info > th, 
+.table > tbody > tr.info > th, 
+.table > tfoot > tr.info > th{
+    background-color: #01aaed;
+    color: #f1fbfc;
+    border-bottom:1px solid #01aaed;
+}
+.table > thead > tr > td.success,
+.table > tbody > tr > td.success, 
+.table > tfoot > tr > td.success, 
+.table > thead > tr > th.success, 
+.table > tbody > tr > th.success, 
+.table > tfoot > tr > th.success, 
+.table > thead > tr.success > td, 
+.table > tbody > tr.success > td,
+.table > tfoot > tr.success > td, 
+.table > thead > tr.success > th, 
+.table > tbody > tr.success > th, 
+.table > tfoot > tr.success > th{
+    background-color: #67c23a;
+    color: #f2faf1;
+    border-bottom:1px solid #67c23a;
+}
+.table > thead > tr > td.danger,
+.table > tbody > tr > td.danger, 
+.table > tfoot > tr > td.danger, 
+.table > thead > tr > th.danger, 
+.table > tbody > tr > th.danger, 
+.table > tfoot > tr > th.danger, 
+.table > thead > tr.danger > td, 
+.table > tbody > tr.danger > td,
+.table > tfoot > tr.danger > td, 
+.table > thead > tr.danger > th, 
+.table > tbody > tr.danger > th, 
+.table > tfoot > tr.danger > th{
+    background-color: rgb(253, 8, 8);
+    color: #faf1f1;
+    border-bottom:1px solid rgb(253, 8, 8);
+}
+.table > thead > tr > td.primary,
+.table > tbody > tr > td.primary, 
+.table > tfoot > tr > td.primary, 
+.table > thead > tr > th.primary, 
+.table > tbody > tr > th.primary, 
+.table > tfoot > tr > th.primary, 
+.table > thead > tr.primary > td, 
+.table > tbody > tr.primary > td,
+.table > tfoot > tr.primary > td, 
+.table > thead > tr.primary > th, 
+.table > tbody > tr.primary > th, 
+.table > tfoot > tr.primary > th{
+    background-color: #40f9ff;
+    color: #f1f8fa;
+    border-bottom:1px solid  #40f9ff;
+}
+.table > thead > tr > td.warm,
+.table > tbody > tr > td.warm, 
+.table > tfoot > tr > td.warm, 
+.table > thead > tr > th.warm, 
+.table > tbody > tr > th.warm, 
+.table > tfoot > tr > th.warm, 
+.table > thead > tr.warm > td, 
+.table > tbody > tr.warm > td,
+.table > tfoot > tr.warm > td, 
+.table > thead > tr.warm > th, 
+.table > tbody > tr.warm > th, 
+.table > tfoot > tr.warm > th{
+    background-color: yellow;
+    color: #f7faf1;
+    border-bottom:1px solid yellow;
+}
+
+.table-border>tbody>tr>td,
+.table-border>thead>tr>th,
+.table-border>tfoot>tr>td
+{
+    border:1px solid #e0e0e0;
+}
+
+/* 黑色表格 */
+.table-inverse{
+    background-color: #393d49;   
+}
+.table-inverse>tbody>tr>td{
+    text-align: center;
+    color: rgb(240, 236, 236);
+    border-bottom: 1px solid #000;
+}
+.table-inverse>tbody>tr>th,
+.table-inverse>tfoot>tr>td,
+.table-inverse>thead>tr>th{
+    text-align: center;
+    color: rgb(214, 200, 200);
+}
+.table-inverse>thead>tr>th:last-child,
+.table-inverse>tfoot>tr>td:last-child,
+.table-inverse>tbody>tr>th:last-child{
+    border-right: 1px solid #393d49;
+}
+.table-inverse-striped>tbody>tr:nth-of-type(odd)>td{
+    background-color: #303242;
+    border-bottom: 1px solid #393d49;
+    text-align: center;
+}
+.table-inverse-striped>tbody>tr:nth-of-type(even)>td{
+    background-color: #393d49;
+    border-bottom: 1px solid #393d49;
+    text-align: center;
+}
+.table-inverse-striped>thead>tr>th,
+.table-inverse-striped>tbody>tr>th{
+    background-color: #393d49;
+    border-bottom: 1px solid #303242;
+    text-align: center;
+}
+
+/* 只能给深色表格加的悬浮效果 */
+.table-inverse-hover.table-inverse>tbody>tr:hover>td,
+.table-inverse-hover.table-inverse-striped>tbody>tr:hover>td{
+    background-color: #2A2C3A;
+    color: #28AAF7;
+}
+
+    /* 写兼容移动端的表格 */
+    @media screen and (max-width:768px){
+    .table-responsive{
+        width: 100%;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        -ms-overflow-style:-ms-autohiding-scrollbar;
+        border:1px solid #e0e0e0;
+    }
+    .table-responsive{
+        /* 当到达移动端时，不让加大高度 */
+        min-height: .01%;
+        overflow-x: auto;
+    }
+    /* 实现横向滚动表格 */
+    @media screen and (max-width:768px){
+        .table-responsive>.table>thead>tbody>tr>th,
+        .table-responsive > .table > tbody > tr > th, 
+        .table-responsive > .table > tfoot > tr > th, 
+        .table-responsive > .table > thead > tr > td,
+        .table-responsive > .table > tbody > tr > td, 
+        .table-responsive > .table > tfoot > tr > td {
+        white-space: nowrap;
+    }
+    }
+}
+
+/* 分页效果 */
+/* 分页样式 */
+.Page{
+    width: 100%;
+}
+.pagination{
+    display: inline-block;
+    margin: 0 -15px;
+}
+.pagination>li>a{
+    display: inline-block;
+    padding: 15px;
+    border:1px solid #ccc;
+    text-decoration: none;
+    color: rgb(63, 57, 57);
+}
+.pagination>li{
+    display: inline-block;
+    /* float: left; */
+    list-style: none;
+}
+
+.pagination-bgc>li>a{
+    background-color: #f4f4f5;
+    color: #303133;
+    font-size: 12px;
+    padding: 8px;
+    border: 1px solid #f4f4f5;
+    font-weight: 900;
+}
+.pagination-bgc .active>a{
+    background-color: rgb(0, 153, 255);
+    color: #fff;
+}
+.pagination-bgc>li>a:hover{
+    background-color: rgb(0, 153, 255);
+    color: #fff;
+}
+.pagination-noBgc>li>a{
+    color: #303133;
+    font-size: 14px;
+    padding: 5px;
+    border:1px solid transparent;
+    font-weight: 900;
+}
+.pagination-noBgc .active>a{
+    color: rgb(0, 153, 255);
+}
+.pagination-noBgc>li>a:hover{
+    color: rgb(0, 153, 255);
+}
+.pagination-inverse>li>a{
+    background-color: #393d49;
+    color: #ccc;
+    font-size: 14px;
+    border:1px solid #393d49;
+    float: left;
+    padding: 5px 10px;
+}
+.pagination-inverse>li{
+    float: left;
+}
+.pagination-inverse>li>a:hover{
+    background-color: #000;
+    color: #fff;
+    border:1px solid #000
+}
+.pagination-inverse .active>a{
+    background-color: #000;
+    color: #fff;
+    border:1px solid #000
+}
+.pagination-inverse-lg>li>a{
+    background-color: #393d49;
+    color: #ccc;
+    font-size: 16px;
+    border:1px solid #393d49;
+    padding: 8px 12px;
+}
+.pagination-inverse-lg>li{
+    float: left;
+}
+.pagination-inverse-lg>li>a:hover{
+    background-color: #000;
+    color: #fff;
+    border:1px solid #000
+}
+.pagination-inverse-lg .active>a{
+    background-color: #000;
+    color: #fff;
+    border:1px solid #000
+}
+
+/* 选择框 */
+.circle-check,.square-check,.check-content{
+    display: inline-block;
+}
+.circle-check .check-content{
+    margin-left: 10px;
+}
+.square-check .check-content{
+    margin-left: 10px;
+}
+ .circle-check > input[type="checkbox"] {
+   width: 1.3rem;
+   height: 1.3rem;
+   display: inline-block;
+   text-align: center;
+   vertical-align: middle;
+   line-height: 1.3rem;
+   position: relative;
+   border-radius: 50%;
+   outline: none;
+   -webkit-appearance: none;
+   border: 1px solid #fff;
+   -webkit-tab-highlight-color: rgba(0, 0, 0, 0);
+   color: #fff;
+   background: #fff;
+ }
+ .circle-check > input[type="checkbox"]::before {
+   box-sizing: border-box;
+   content: "";
+   position: absolute;
+   top: -1px;
+   left: 0;
+   background: #fff;
+   width: 100%;
+   height: 100%;
+   border: 1px solid #999999;
+   border-radius: 50%;
+   color: #fff;
+ }
+ .circle-check > input[type="checkbox"]:checked::before {
+   content: "\2713";
+   background-color: #657afe;
+   border: 1px solid #657afe;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   color: #fff;
+   font-size: 1rem;
+   border-radius: 50%;
+ }
+ .circle-check > input[type="checkbox"]:disabled::before {
+   background: #eee;
+   cursor: default;
+ }
+
+ .square-check > input[type="checkbox"] {
+   overflow: hidden;
+   width: 1.3rem;
+   height: 1.3rem;
+   vertical-align: middle;
+   outline: none;
+   text-align: center;
+   line-height: 1.3rem;
+   /* 清空表单元素默认样式；input 突起或者；凹进去的 浅灰背景色 */
+   appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   -o-appearance: none;
+   /* 行高颜色 解决移动端按钮；点击出现透明灰色样式 */
+   -webkit-tab-highlight-color: rgba(0, 0, 0, 0);
+   background-color: #fff;
+   border: 1px solid #ccc;
+   position: relative;
+   color: #fff;
+ }
+ .square-check > input[type="checkbox"]::before {
+   content: "";
+   position: absolute;
+   z-index: 10;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 100%;
+ }
+ /* 选中checkbox 没有选中时候；伪元素的样式 */
+ .square-check > input[type="checkbox"]:disabled::before {
+   background-color: #fff;
+ }
+ .square-check > input[type="checkbox"]:checked::before {
+     /* 对号的转义字符 */
+   content: "\2713";
+   background: #657afe;
+   border: 1px solid #657afe;
+   font-size: 1rem;
+ }
+ .square-check > input[type="checkbox"]:checked {
+   border: 1px solid transparent;
+ }
+ .square-check > input[type="checkbox"]:disabled {
+   border: 1px solid #ccc;
+ }
+
+ /* 滑块 */
+ .sliderBar-box{
+    border:1px solid #ccc;
+    margin: 50px 0;
+    position: relative;
+}
+.sliderBar-box>.sliderBar{
+    width: 100%;
+    height: 10px;
+    background-color: red;
+    border-radius: 3px;    
+    animation: progress 2s linear;
+}
+.sliderBar-box>.sliderBar>.sliderBar-control{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    border:1px solid red;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    bottom:-85%;
+    left: calc(100% - 25px);
+    text-align: center;
+    animation: move 2s linear;
+}
+.sliderBar-number{
+    display: inline-block;
+    position: absolute;
+    top:-31px;
+    left:-1px;
+    color: #fff;
+}
+.sliderBar-control::before{
+    content:"";
+    width: 24px;
+    height: 20px;
+    background-color: #000;
+    position: absolute;
+    top:-30px;
+    left:0px;
+    color: #fff;
+}
+.sliderBar-control::after{
+    content:"";
+    width: 0px;
+    height: 0px;
+    display: inline-block;
+    border:5px solid transparent;
+    border-top:5px solid #000;
+    position: absolute;
+    top:-10px;
+    left:6px;
+}
+@keyframes progress{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+@keyframes move{
+    from{
+        left:0%;
+    }
+    to{
+        left:calc(100%-25px);
+    }
+}
+.sliderBar-box>.sliderBar-success{
+    background-color: #67c23a;
+}
+.sliderBar-box>.sliderBar-success>.sliderBar-control{
+    border:1px solid #67c23a;
+}
+.sliderBar-box>.sliderBar-info{
+    background-color: #01aaed;
+}
+.sliderBar-box>.sliderBar-info>.sliderBar-control{
+    border:1px solid #01aaed;
+}
+.sliderBar-box>.sliderBar-primary{
+    background-color: #40f9ff;
+}
+.sliderBar-box>.sliderBar-primary>.sliderBar-control{
+    border:1px solid #40f9ff;
+}
+.sliderBar-box>.sliderBar-error{
+    background-color: rgb(252, 8, 8);
+}
+.sliderBar-box>.sliderBar-error>.sliderBar-control{
+    border:1px solid rgb(252, 8, 8);
+}
+
+/* 开关 */
+/* 必须input为CheckBox,class添加switch才能实现以下效果 */
+input[type="checkbox"].switch{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    width: 2.8rem;
+    height: 1.4rem;
+    border:1px solid #ccc;
+    background-color: #ccc;
+    border-radius: 0.7rem;
+    outline: none;
+ }
+ input[type="checkbox"].switch::after{
+     content: "";
+     display: inline-block;
+     width: 1.4rem;
+     height: 1.39rem;
+     border-radius: 50%;
+     background-color: #fff;
+     box-shadow: 0 0 2px #999;
+     transition: left 0.1s;
+     position: absolute;
+     top: -1px;
+     left:0;    
+ }
+ input[type="checkbox"].switch:checked{
+     background-color: #32ba58;
+ }
+ /* 
+    1.默认为不被选中状态
+    input[type="checkbox"] 被选中时，伪元素显示下面样式，定位发生变化
+ */
+ input[type="checkbox"].switch:checked::after{
+     position: absolute;
+     left:1.4rem;
+     top: -1px;
+ }
+ /* 状态 */
+ input[type="checkbox"]:checked.switch.switch-info{
+    background-color: #409eff;
+ }
+ input[type="checkbox"]:checked.switch.switch-danger{
+    background-color: rgb(255, 73, 73);
+ }
+ input[type="checkbox"]:checked.switch.switch-warm{
+    background-color: hsl(51,93%,54%);
+ }
+ input[type="checkbox"]:checked.switch.switch-primary{
+     background-color: #409eff;
+ }
+ input[type="checkbox"].switch.switch-primary{
+    background-color: rgb(255, 73, 73);
+ }
+
+
+ /* 导航，不兼容移动端 */
+.nav{
+    display: block;
+    width: 100%;
+    /* 高度不可以受限 */
+}
+.nav,.nav>ul{
+    padding: 0 10px;
+}
+.nav li{
+    list-style: none;
+    float: left;
+}
+.nav::after{
+    /* 给祖级元素 */
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+    zoom: 1;
+}
+.nav li>a{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    padding: 15px;
+}
+.nav-tab{
+    width: 100%;
+    border-bottom:1px solid #ccc;
+    
+}
+.nav-tab .active>a{
+    border:1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    box-shadow: 1px 1px 5px 1px #ccc;
+    font-weight: bold;
+}
+.nav-tab li{
+    position: relative;
+    top:1px;
+}
+.nav-tab li>a:hover{
+    border:1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
+}
+.nav-pills .active>a{
+    background-color: steelblue;
+    color: rgb(229, 229, 243);
+}
+.nav-pills li>a:hover{
+    background-color: steelblue;
+    color: rgb(229, 229, 243);
+}
+.nav-pills{
+    box-shadow: 0px 2px 5px 0px #ccc;
+}
+.nav-stacked{
+    padding: 0px !important;
+}
+.nav-stacked li{
+    width: 100%;
+    text-align: center;
+}
+.nav-stacked li>a{
+    width: 100%;
+    text-align: center;
+}
+
+.nav-inverse{
+    background-color: #545c64;
+}
+.nav-inverse .active>a{
+    color: #ffba51;
+    border-bottom: 2px solid #ffba51;
+}
+.nav-inverse li>a{
+    color: #fff;
+}
+.nav-inverse li>a:hover{
+    color: #ffba51;
+    border-bottom: 2px solid #ffba51;
+}
+
+/* 纵向黑色 */
+.nav-inverse-stacked{
+    background-color: #545c64;
+}
+.nav-inverse-stacked,
+nav-inverse-stacked>ul{
+    padding: 0 !important;
+}
+.nav-inverse-stacked li>{
+    width: 100%;
+    text-align: center;
+}
+.nav-inverse-stacked li>a{
+    width: 100%;
+    color:#fff;
+}
+.nav-inverse-stacked li>a:hover{
+    color: #ffba51;
+    background-color: #2b2c3a;
+}
+.nav-inverse-stacked .active>a{
+    color: #ffba51;
+    background-color: #2b2c3a;
+}
+
+/* 黑色背景色横向导航条 */
+.nav-inverse-black{
+    background-color: #545c64;
+}
+.nav-inverse-black .active>a{
+    color: #ffba51;
+}
+.nav-inverse-black li>a{
+    color: #fff;
+}
+.nav-inverse-black li>a:hover{
+    color: #ffba51;
+    background-color: #2b2c3a;
+}
+
+/* 纵向灰色 */
+.nav-inverse-grey{
+    background-color: #2b2c3a;
+}
+.nav-inverse-grey,
+nav-inverse-grey>ul{
+    padding: 0 !important;
+}
+.nav-inverse-grey li>{
+    width: 100%;
+    text-align: center;
+}
+.nav-inverse-grey li>a{
+    width: 100%;
+    color:#fff;
+}
+.nav-inverse-grey li>a:hover{
+    color: #ffba51;
+    background-color: #545c64;
+}
+.nav-inverse-grey .active>a{
+    color: #ffba51;
+    background-color: #545c64;
+}
+
+/* 定位 */
+.nav-fixed-top{
+    position: fixed;
+    top:0;
+}
+.nav-fixed-left{
+    position: fixed;
+    left: 0;
+}
+.nav-fixed-right{
+    position: fixed;
+    right: 15px;
+}
+
+/* 表单组件 */
+input{
+    border: none;   /*输入框没有边框*/
+    appearance: none;   
+    -moz-appearance: none;
+    outline: none;  /*获取焦点时的默认样式*/
+    -webkit-appearance: none;
+}
+.form-group{
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+}
+.form-control{
+    display: block;
+    border:1px solid #ccc;
+    padding:10px;
+    width: 100%;
+}
+/* input获取焦点时，.form-control显示的样式 */
+/* 可以将其他元素变为表单元素，:focus值针对可以获取焦点的元素 */
+.form-control:focus{
+    outline: 1px solid rgb(0, 183, 255);
+    border: 1px solid rgb(0, 183, 255);
+}
+.form-label{
+    display: inline-block;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    padding:5px 3px 5px 5px;
+}
+
+@media screen and (min-width:768px){
+    .form-inline .form-group{
+        display: inline-block;
+        width: auto;
+    }
+    .form-inline .form-control{
+        display: inline-block;
+        /* auto自动：宽度由子元素撑起来 */
+        width: auto;
+        padding: 6px 12px;
+    }
+    /* 用户自定义 */
+    .form-inline .checkbox{
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .form-horizontal{
+        text-align: center;
+    }
+    .form-horizontal .form-group::after{
+        content: '';
+        display: table;
+    }
+    .form-horizontal .form-label{
+        display: inline-block;
+        max-width: 100%;
+        min-width: 16.6666667%;
+        width: auto;
+        text-align: right;
+        padding: 6px 12px;
+    }
+    .form-horizontal .form-control{
+        display: inline-block;
+        min-width: 83.3333333%;
+        margin-left: -5px;
+        max-width: 100%;
+        width: auto;
+    }
+    
+    .form-horizontal .form-check{
+        display: inline-block;
+        min-width: 83.3333333%;
+        margin-left: -5px;
+        max-width: 100%;
+        width: auto; 
+        vertical-align: text-top;
+        text-align: left;
+    }
+    .form-horizontal .form-group{
+        width: 100%;
+    }
+    .form-check>.form-check-item{
+    display: inline-block;
+    width: 33%;
+    text-align: left;
+    margin-bottom: 10px;    
+    }
+}
+
+
+/* 栅格 */
+.row:after{
+    content: '';
+    display: table;
+    visibility: hidden;
+    clear: both;
+}
+
+/* 将所有是员工栅格系统的元素变为inline-block */
+.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,
+.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12,
+.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,
+.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,
+.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,
+.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,
+.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,
+.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12
+{
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+
+
+/* 超级小屏幕 xs */
+.col-xs-1{
+    width: 8.3333333%;
+}
+.col-xs-2{
+    width: 16.6666667%;
+}
+.col-xs-3{
+    width: 25%;
+}
+.col-xs-4{
+    width: 33.3333333%;
+}
+.col-xs-5{
+    width: 41.6666667%;
+}
+.col-xs-6{
+    width: 50%;
+}
+.col-xs-7{
+    width: 58.3333333%;
+}
+.col-xs-8{
+    width: 66.6666667%;
+}
+.col-xs-9{
+    width: 75%;
+}
+.col-xs-10{
+    width: 83.3333333%;
+}
+.col-xs-11{
+    width: 91.6666667%;
+}
+.col-xs-12{
+    width: 100%;
+}
+.col-xs-offset-1{
+    margin-left: 8.3333333%;
+}
+.col-xs-offset-2{
+    margin-left: 16.6666667%;
+}
+.col-xs-offset-3{
+    margin-left: 25%;
+}
+.col-xs-offset-4{
+    margin-left: 33.3333333%;
+}
+.col-xs-offset-5{
+    margin-left: 41.6666667%;
+}
+.col-xs-offset-6{
+    margin-left: 50%;
+}
+.col-xs-offset-7{
+    margin-left: 58.3333333%;
+}
+.col-xs-offset-8{
+    margin-left: 66.6666667%;
+}
+.col-xs-offset-9{
+    margin-left: 75%;
+}
+.col-xs-offset-10{
+    margin-left: 83.3333333%;
+}
+.col-xs-offset-11{
+    margin-left: 91.6666667%;
+}
+.col-xs-offset-12{
+    margin-left: 100%;
+}
+
+.col-xs-pull-1{
+    right: 8.3333333%;
+}
+.col-xs-pull-2{
+    right: 16.6666667%;
+}
+.col-xs-pull-3{
+    right: 25%;
+}
+.col-xs-pull-4{
+    right: 33.3333333%;
+}
+.col-xs-pull-5{
+    right: 41.6666667%;
+}
+.col-xs-pull-6{
+    right: 50%;
+}
+.col-xs-pull-7{
+    right: 58.3333333%;
+}
+.col-xs-pull-8{
+    right: 66.6666667%;
+}
+.col-xs-pull-9{
+    right: 75%;
+}
+.col-xs-pull-10{
+    right: 83.3333333%;
+}
+.col-xs-pull-11{
+    right: 91.6666667%;
+}
+.col-xs-pull-12{
+    right: 100%;
+}
+.col-xs-push-1{
+    left: 8.3333333%;
+}
+.col-xs-push-2{
+    left: 16.6666667%;
+}
+.col-xs-push-3{
+    left: 25%;
+}
+.col-xs-push-4{
+    left: 33.3333333%;
+}
+.col-xs-push-5{
+    left: 41.6666667%;
+}
+.col-xs-push-6{
+    left: 50%;
+}
+.col-xs-push-7{
+    left: 58.3333333%;
+}
+.col-xs-push-8{
+    left: 66.6666667%;
+}
+.col-xs-push-9{
+    left: 75%;
+}
+.col-xs-push-10{
+    left: 83.3333333%;
+}
+.col-xs-push-11{
+    left: 91.6666667%;
+}
+.col-xs-push-12{
+    left: 100%;
+}
+
+
+/* 小屏幕 sm */
+@media screen and (min-width:768px){
+    .col-sm-1{
+        width: 8.3333333%;
+    }
+    .col-sm-2{
+        width: 16.6666667%;
+    }
+    .col-sm-3{
+        width: 25%;
+    }
+    .col-sm-4{
+        width: 33.3333333%;
+    }
+    .col-sm-5{
+        width: 41.6666667%;
+    }
+    .col-sm-6{
+        width: 50%;
+    }
+    .col-sm-7{
+        width: 58.3333333%;
+    }
+    .col-sm-8{
+        width: 66.6666667%;
+    }
+    .col-sm-9{
+        width: 75%;
+    }
+    .col-sm-10{
+        width: 83.3333333%;
+    }
+    .col-sm-11{
+        width: 91.6666667%;
+    }
+    .col-sm-12{
+        width: 100%;
+    }
+    .col-sm-offset-1{
+        margin-left: 8.3333333%;
+    }
+    .col-sm-offset-2{
+        margin-left: 16.6666667%;
+    }
+    .col-sm-offset-3{
+        margin-left: 25%;
+    }
+    .col-sm-offset-4{
+        margin-left: 33.3333333%;
+    }
+    .col-sm-offset-5{
+        margin-left: 41.6666667%;
+    }
+    .col-sm-offset-6{
+        margin-left: 50%;
+    }
+    .col-sm-offset-7{
+        margin-left: 58.3333333%;
+    }
+    .col-sm-offset-8{
+        margin-left: 66.6666667%;
+    }
+    .col-sm-offset-9{
+        margin-left: 75%;
+    }
+    .col-sm-offset-10{
+        margin-left: 83.3333333%;
+    }
+    .col-sm-offset-11{
+        margin-left: 91.6666667%;
+    }
+    .col-sm-offset-12{
+        margin-left: 100%;
+    }
+    .col-sm-pull-1{
+        right: 8.3333333%;
+    }
+    .col-sm-pull-2{
+        right: 16.6666667%;
+    }
+    .col-sm-pull-3{
+        right: 25%;
+    }
+    .col-sm-pull-4{
+        right: 33.3333333%;
+    }
+    .col-sm-pull-5{
+        right: 41.6666667%;
+    }
+    .col-sm-pull-6{
+        right: 50%;
+    }
+    .col-sm-pull-7{
+        right: 58.3333333%;
+    }
+    .col-sm-pull-8{
+        right: 66.6666667%;
+    }
+    .col-sm-pull-9{
+        right: 75%;
+    }
+    .col-sm-pull-10{
+        right: 83.3333333%;
+    }
+    .col-sm-pull-11{
+        right: 91.6666667%;
+    }
+    .col-sm-pull-12{
+        right: 100%;
+    }
+    .col-sm-push-1{
+        left: 8.3333333%;
+    }
+    .col-sm-push-2{
+        left: 16.6666667%;
+    }
+    .col-sm-push-3{
+        left: 25%;
+    }
+    .col-sm-push-4{
+        left: 33.3333333%;
+    }
+    .col-sm-push-5{
+        left: 41.6666667%;
+    }
+    .col-sm-push-6{
+        left: 50%;
+    }
+    .col-sm-push-7{
+        left: 58.3333333%;
+    }
+    .col-sm-push-8{
+        left: 66.6666667%;
+    }
+    .col-sm-push-9{
+        left: 75%;
+    }
+    .col-sm-push-10{
+        left: 83.3333333%;
+    }
+    .col-sm-push-11{
+        left: 91.6666667%;
+    }
+    .col-sm-push-12{
+        left: 100%;
+    }    
+}
+
+
+/* 中等屏幕 md */
+@media screen and (min-width:992px){
+    .col-md-1{
+        width: 8.3333333%;
+    }
+    .col-md-2{
+        width: 16.6666667%;
+    }
+    .col-md-3{
+        width: 25%;
+    }
+    .col-md-4{
+        width: 33.3333333%;
+    }
+    .col-md-5{
+        width: 41.6666667%;
+    }
+    .col-md-6{
+        width: 50%;
+    }
+    .col-md-7{
+        width: 58.3333333%;
+    }
+    .col-md-8{
+        width: 66.6666667%;
+    }
+    .col-md-9{
+        width: 75%;
+    }
+    .col-md-10{
+        width: 83.3333333%;
+    }
+    .col-md-11{
+        width: 91.6666667%;
+    }
+    .col-md-12{
+        width: 100%;
+    }
+    .col-md-offset-1{
+        margin-left: 8.3333333%;
+    }
+    .col-md-offset-2{
+        margin-left: 16.6666667%;
+    }
+    .col-md-offset-3{
+        margin-left: 25%;
+    }
+    .col-md-offset-4{
+        margin-left: 33.3333333%;
+    }
+    .col-md-offset-5{
+        margin-left: 41.6666667%;
+    }
+    .col-md-offset-6{
+        margin-left: 50%;
+    }
+    .col-md-offset-7{
+        margin-left: 58.3333333%;
+    }
+    .col-md-offset-8{
+        margin-left: 66.6666667%;
+    }
+    .col-md-offset-9{
+        margin-left: 75%;
+    }
+    .col-md-offset-10{
+        margin-left: 83.3333333%;
+    }
+    .col-md-offset-11{
+        margin-left: 91.6666667%;
+    }
+    .col-md-offset-12{
+        margin-left: 100%;
+    }
+    .col-md-pull-1{
+        right: 8.3333333%;
+    }
+    .col-md-pull-2{
+        right: 16.6666667%;
+    }
+    .col-md-pull-3{
+        right: 25%;
+    }
+    .col-md-pull-4{
+        right: 33.3333333%;
+    }
+    .col-md-pull-5{
+        right: 41.6666667%;
+    }
+    .col-md-pull-6{
+        right: 50%;
+    }
+    .col-md-pull-7{
+        right: 58.3333333%;
+    }
+    .col-md-pull-8{
+        right: 66.6666667%;
+    }
+    .col-md-pull-9{
+        right: 75%;
+    }
+    .col-md-pull-10{
+        right: 83.3333333%;
+    }
+    .col-md-pull-11{
+        right: 91.6666667%;
+    }
+    .col-md-pull-12{
+        right: 100%;
+    }
+    .col-md-push-1{
+        left: 8.3333333%;
+    }
+    .col-md-push-2{
+        left: 16.6666667%;
+    }
+    .col-md-push-3{
+        left: 25%;
+    }
+    .col-md-push-4{
+        left: 33.3333333%;
+    }
+    .col-md-push-5{
+        left: 41.6666667%;
+    }
+    .col-md-push-6{
+        left: 50%;
+    }
+    .col-md-push-7{
+        left: 58.3333333%;
+    }
+    .col-md-push-8{
+        left: 66.6666667%;
+    }
+    .col-md-push-9{
+        left: 75%;
+    }
+    .col-md-push-10{
+        left: 83.3333333%;
+    }
+    .col-md-push-11{
+        left: 91.6666667%;
+    }
+    .col-md-push-12{
+        left: 100%;
+    }
+}
+
+
+/* 大屏幕 lg */
+@media screen and (min-width:1200px){
+    .col-lg-1{
+        width: 8.3333333%;
+    }
+    .col-lg-2{
+        width: 16.6666667%;
+    }
+    .col-lg-3{
+        width: 25%;
+    }
+    .col-lg-4{
+        width: 33.3333333%;
+    }
+    .col-lg-5{
+        width: 41.6666667%;
+    }
+    .col-lg-6{
+        width: 50%;
+    }
+    .col-lg-7{
+        width: 58.3333333%;
+    }
+    .col-lg-8{
+        width: 66.6666667%;
+    }
+    .col-lg-9{
+        width: 75%;
+    }
+    .col-lg-10{
+        width: 83.3333333%;
+    }
+    .col-lg-11{
+        width: 91.6666667%;
+    }
+    .col-lg-12{
+        width: 100%;
+    }
+    .col-lg-offset-1{
+        margin-left: 8.3333333%;
+    }
+    .col-lg-offset-2{
+        margin-left: 16.6666667%;
+    }
+    .col-lg-offset-3{
+        margin-left: 25%;
+    }
+    .col-lg-offset-4{
+        margin-left: 33.3333333%;
+    }
+    .col-lg-offset-5{
+        margin-left: 41.6666667%;
+    }
+    .col-lg-offset-6{
+        margin-left: 50%;
+    }
+    .col-lg-offset-7{
+        margin-left: 58.3333333%;
+    }
+    .col-lg-offset-8{
+        margin-left: 66.6666667%;
+    }
+    .col-lg-offset-9{
+        margin-left: 75%;
+    }
+    .col-lg-offset-10{
+        margin-left: 83.3333333%;
+    }
+    .col-lg-offset-11{
+        margin-left: 91.6666667%;
+    }
+    .col-lg-offset-12{
+        margin-left: 100%;
+    }
+    .col-lg-pull-1{
+        right: 8.3333333%;
+    }
+    .col-lg-pull-2{
+        right: 16.6666667%;
+    }
+    .col-lg-pull-3{
+        right: 25%;
+    }
+    .col-lg-pull-4{
+        right: 33.3333333%;
+    }
+    .col-lg-pull-5{
+        right: 41.6666667%;
+    }
+    .col-lg-pull-6{
+        right: 50%;
+    }
+    .col-lg-pull-7{
+        right: 58.3333333%;
+    }
+    .col-lg-pull-8{
+        right: 66.6666667%;
+    }
+    .col-lg-pull-9{
+        right: 75%;
+    }
+    .col-lg-pull-10{
+        right: 83.3333333%;
+    }
+    .col-lg-pull-11{
+        right: 91.6666667%;
+    }
+    .col-lg-pull-12{
+        right: 100%;
+    }
+    .col-lg-push-1{
+        left: 8.3333333%;
+    }
+    .col-lg-push-2{
+        left: 16.6666667%;
+    }
+    .col-lg-push-3{
+        left: 25%;
+    }
+    .col-lg-push-4{
+        left: 33.3333333%;
+    }
+    .col-lg-push-5{
+        left: 41.6666667%;
+    }
+    .col-lg-push-6{
+        left: 50%;
+    }
+    .col-lg-push-7{
+        left: 58.3333333%;
+    }
+    .col-lg-push-8{
+        left: 66.6666667%;
+    }
+    .col-lg-push-9{
+        left: 75%;
+    }
+    .col-lg-push-10{
+        left: 83.3333333%;
+    }
+    .col-lg-push-11{
+        left: 91.6666667%;
+    }
+    .col-lg-push-12{
+        left: 100%;
+    }
+}
+    
+
